@@ -77,5 +77,7 @@ http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry
 https://www.deciphertechnic.com/install-opencv-python-on-raspberry-pi/
 ```
 
-
-
+## Backup image and restoring
+```
+https://thepihut.com/blogs/raspberry-pi-tutorials/17789160-backing-up-and-restoring-your-raspberry-pis-sd-card
+```
