@@ -67,6 +67,15 @@ change password with the following cmd:
   sudo passwd
 ```
 
+## ROSBerryPi Setup
+```
+http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi
+```
+
+## OpenCV 3.4.1 setup
+```
+https://www.deciphertechnic.com/install-opencv-python-on-raspberry-pi/
+```
 
 
 
