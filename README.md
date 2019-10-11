@@ -12,6 +12,7 @@ First we want to set a static ip for the computer we are using. create a new wir
 use nm-connection editor to make the network "shared with other computers" in ipv4 settings.
 
 __1. Open a terminal__
+## (IF USING RASBIAN)
 open dhcpdc config file on the sd card and uncomment the default eth0 interface.
 ```
   nano /media/rootf/etc/dhcpcd.conf
@@ -25,6 +26,41 @@ interface eth0
         static routers=192.168.0.1
         static domain_name_servers=192.168.0.1 8.8.8.8 fd51:42f8:caae:d92e::1
 ```
+## (IF USING UBUNTU Server)
+Connect to the pi wired. This requires an ip from the Pi, this can be found with the command nmap: 
+```
+
+```
+
+now connect with ssh, as in step 2. Now setup the first time login. Now you have control over the pi, but no internet connection. To setup a internet through wired follow this: 
+
+open /etc/netplan/XXX.yaml, with sudo nano and paste something like this: 
+```
+network:
+   version: 2
+   ethernets:
+      eth0:
+         dhcp4: no
+         addresses: [192.168.0.10/24] <-------- The address you want to assign the pi
+         gateway4: 192.168.0.5        <-------- The address of the static ip set up on the pc
+         nameservers:
+            addresses: [8.8.4.4,8.8.8.8]
+
+```
+
+now run 
+```
+  sudo netplan apply
+
+```
+
+and login to the pi again. You might need to update the known host file by running this command:
+```
+  sudo ssh-keygen -f "/root/.ssh/known_hosts" -R "192.168.0.10"
+```
+
+__(Reference)__  https://www.techrepublic.com/article/how-to-configure-a-static-ip-address-in-ubuntu-server-18-04/
+
 __2. connect to the pi(WIRED)__
 The raspberry pi has a standard login, with the name "pi" and password "raspberry". 
 Connect with ssh and enter the password:
@@ -35,6 +71,8 @@ Connect with ssh and enter the password:
 Now the pi should have internet connection through you laptop and are able to connect to the pi via ssh. if this is not the case, you did something wrong.
 
 __3. connect to the pi wirelessly__
+
+__(IF RUNNING RASBIAN)__
 You need to have completed step 2 to complete this step.
 
 On the pi run raspi-config:
@@ -60,6 +98,11 @@ The ip of the pi should pop up, locate it and connect with ssh and enter the pas
 ```
   ssh pi@"IP"
 ```
+
+__(IF RUNNING UBUNTU Server)__
+Check the referenced guide and start from step 4:
+
+reference: https://medium.com/a-swift-misadventure/how-to-setup-your-raspberry-pi-2-3-with-ubuntu-16-04-without-cables-headlessly-9e3eaad32c01
 
 __4. (OPTIONAL) change the password__
 change password with the following cmd:
