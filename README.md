@@ -35,21 +35,31 @@ Connect to the pi wired. This requires an ip from the Pi, this can be found with
 now connect with ssh, as in step 2. Now setup the first time login. Now you have control over the pi, but no internet connection. To setup a internet through wired follow this: 
 
 open /etc/netplan/XXX.yaml, with sudo nano and paste something like this: 
+You need to paste you own network names, eg. eth0 and wlan0 can vary, so be sure that this is correct(This can be checked by running iwconfig and ifconfig). the wifi-name and password is should also be replaced by you wifi preferences.
 ```
 network:
    version: 2
    ethernets:
       eth0:
          dhcp4: no
-         addresses: [192.168.0.10/24] <-------- The address you want to assign the pi
-         gateway4: 192.168.0.5        <-------- The address of the static ip set up on the pc
+         addresses: [192.168.0.10/24]
+         gateway4: 192.168.0.5
          nameservers:
             addresses: [8.8.4.4,8.8.8.8]
+   wifis:
+      wlan0:
+         dhcp4: true
+         dhcp6: true
+         access-points:
+           "WIFI-NAME":
+              password: "PASSWORD"
+
 
 ```
 
 now run 
 ```
+  sudo netplan generate
   sudo netplan apply
 
 ```
