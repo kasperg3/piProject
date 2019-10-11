@@ -70,6 +70,8 @@ and login to the pi again. You might need to update the known host file by runni
 ```
 
 __(Reference)__  https://www.techrepublic.com/article/how-to-configure-a-static-ip-address-in-ubuntu-server-18-04/
+ and 
+ https://askubuntu.com/questions/1105069/how-to-enable-wireless-on-ubuntu-server-18-04-via-cli
 
 __2. connect to the pi(WIRED)__
 The raspberry pi has a standard login, with the name "pi" and password "raspberry". 
