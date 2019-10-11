@@ -3,7 +3,7 @@ Raspberry pi project. Containing setup of a headless pi3.
 
 
 ## Setup 
-Download the latest raspbian lite at: https://www.raspberrypi.org/downloads/raspbian/
+Download the latest raspbian lite at: https://www.raspberrypi.org/downloads/raspbian/ (Or use a pre installed ubuntu server image from https://wiki.ubuntu.com/ARM/RaspberryPi).
 Either write the image using etcher(or another tool) or do it in the commandline.(i used etcher)
 
 ### Network setup
