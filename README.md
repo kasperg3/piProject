@@ -116,6 +116,9 @@ Check the referenced guide and start from step 4:
 
 reference: https://medium.com/a-swift-misadventure/how-to-setup-your-raspberry-pi-2-3-with-ubuntu-16-04-without-cables-headlessly-9e3eaad32c01
 
+If raspi-config is needed install it using this StackOverflow question:
+https://askubuntu.com/questions/1130052/enable-i2c-on-raspberry-pi-ubuntu½
+
 __4. (OPTIONAL) change the password__
 change password with the following cmd:
 ```
