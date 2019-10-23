@@ -27,9 +27,9 @@ interface eth0
         static domain_name_servers=192.168.0.1 8.8.8.8 fd51:42f8:caae:d92e::1
 ```
 ## (IF USING UBUNTU Server)
-Connect to the pi wired. This requires an ip from the Pi, this can be found with the command nmap: 
+Connect to the pi wired. This requires an ip from the Pi, this can be found with the program nmap: 
 ```
-
+  nmap -sP 192.168.0.0/24
 ```
 
 now connect with ssh, as in step 2. Now setup the first time login. Now you have control over the pi, but no internet connection. To setup a internet through wired follow this: 
